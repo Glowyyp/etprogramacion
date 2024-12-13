@@ -1,0 +1,94 @@
+
+.container-pv {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  ion-item {
+    width: 100%;
+    max-width: 400px;
+    margin: 8px 0;
+    --background: #2b2b2b; 
+    color: white;        
+  }
+  
+  ion-label {
+    color: #c1c1c1; 
+  }
+  
+  
+  .button-group {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  
+  #map {
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+  }
+  
+  #trayecto {
+    width: 100%;
+    max-width: 400px;
+    height: 150px;
+    margin-top: 10px;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  
+  ion-button {
+    border-radius: 8px;
+    background: #4a90e2;
+    color: white;
+    font-weight: 500;
+  }
+
+ion-item {
+  border-radius: 8px;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+}
+
+
+.loader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Optional: darken background */
+  z-index: 1000; /* Ensures it appears above other elements */
+}
+
+.truckWrapper {
+  width: 200px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: flex-end;
+  overflow-x: hidden;
+}
+
