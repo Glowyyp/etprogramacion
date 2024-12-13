@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Viajes Disponibles</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+  <div class="loader" *ngIf="isLoading">
+    <ion-spinner name="crescent"></ion-spinner>
+  </div>
+
+
+  <ion-list *ngIf="!isLoading && viajes.length > 0">
+    <ion-item *ngFor="let viaje of viajes" lines="none">
+      <ion-label>
+        <h2>{{ viaje.nombreConductor }}</h2>
+        <p>Capacidad: {{ viaje.capacidad }} | Costo: ${{ viaje.costo }}</p>
+        <p>Destino: {{ viaje.destino }}</p>
+      </ion-label>
+      <ion-button color="primary" (click)="DetallesViajeModal(viaje)">Ver Ruta</ion-button>
+    </ion-item>
+  </ion-list>
+
+
+  <div *ngIf="!isLoading && viajes.length === 0" class="no-trips-message">
+    <p>No hay viajes disponibles en este momento.</p>
+  </div>
+
+  
+  <ion-button expand="block" (click)="volver()" *ngIf="!isLoading">Volver</ion-button>
+</ion-content>

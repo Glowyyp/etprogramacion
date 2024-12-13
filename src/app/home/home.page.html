@@ -1,20 +1,54 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title><img src="../../../assets/img/logo.png" alt="" class="logo"></ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-content class="ion-padding">
+    <ion-button expand="block" shape="round" (click)="sobre()">Sobre nosotros</ion-button>
+    <ion-button expand="block" color="danger" shape="round" (click)="cerrar()">Cerrar sesión</ion-button>
+  </ion-content>
+</ion-menu>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>TeLLevo</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <div *ngIf="rolusuario === 'pasajero'">
+      <ion-buttons style="padding-top: 65px; margin-right: 30px;">
+        <ion-button id="pasajero" style="margin-left: 10px;">(?)</ion-button>
+        <ion-alert
+          trigger="pasajero"
+          header="Sección designada para pasajeros *Solo utilizar si no tienes transporte*"
+          [buttons]="alertButtons"
+          (didDismiss)="setResult($event)"
+        ></ion-alert>
+        <ion-button style="width: 90%;" expand="block" shape="full" fill="outline" (click)="viajesdisp()">
+          <img style="width: 300px; height: 300px;" src="../../assets/icon/images.png" alt="Viajes Disponibles">
+        </ion-button>
+      </ion-buttons>
+    </div>
+
+    <div *ngIf="rolusuario === 'conductor'">
+      <ion-buttons style="padding-top: 65px; margin-right: 30px;">
+        <ion-button id="driver" style="margin-left: 10px;">(?)</ion-button>
+        <ion-alert
+          trigger="driver"
+          header="Sección de conductor *solo utilizar si eres conductor*"
+          [buttons]="alertButtons"
+          (didDismiss)="setResult($event)"
+        ></ion-alert>
+        <ion-button style="width: 90%;" expand="block" shape="full" fill="outline" (click)="programar()">
+          <img style="width: 300px; height: 300px;" src="../../assets/icon/driving-wheel--smiley.jpg" alt="Programar Viajes">
+        </ion-button>
+      </ion-buttons>
+    </div>
+  </ion-content>
+</div>

@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Programar Viaje</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="container-pv">
+
+    <ion-item>
+      <div class="gap">
+        <ion-label position="stacked">Nombre:</ion-label>
+        <ion-input type="text" [(ngModel)]="nombreConductor" placeholder="Juan" ></ion-input>
+      </div>
+    </ion-item>
+    
+ 
+
+    <ion-item>
+      <div class="gap">
+        <ion-label position="stacked">Patente del Vehiculo:</ion-label>
+        <ion-input type="text" [(ngModel)]="patente" placeholder="XXX 1111"></ion-input>
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <div class="gap">
+        <ion-label position="stacked">Capacidad de Pasajeros</ion-label>
+        <ion-input type="number" [(ngModel)]="capacidad"></ion-input>
+      </div>
+    </ion-item>
+  
+    <ion-item>
+      <div class="gap">
+        <ion-label position="stacked">Costo por Pasajero</ion-label>
+        <ion-input type="number" [(ngModel)]="costo"></ion-input>
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <div class="gap">
+        <ion-label position="stacked"> Destino </ion-label>
+        <input type="text" id="autocomplete">
+        <ion-button expand="block" (click)="calculaRuta()">Indicaciones del trayecto</ion-button>
+       
+      </div>
+    </ion-item>
+    <div id="map" style="height: 250px; width: 100%; margin-top: 20px;"></div>
+    <div id="trayecto" style="height: 150px; width: 100%; margin-top: 10px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;"></div>
+  
+    
+    <ion-button expand="block" (click)="agendar()">Programar</ion-button>
+    <ion-button expand="block" color="danger"  (click)="volver()">cancelar</ion-button>
+    
+  </div>
+  
+</ion-content>
+
